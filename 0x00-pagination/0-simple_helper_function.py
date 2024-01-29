@@ -1,4 +1,4 @@
-#!/usr/bin/env pythoni
+#!/usr/bin/env python3
 
 """Module for index_range function."""
 
