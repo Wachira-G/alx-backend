@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Inherits from BaseCaching and is a chaching system."""
 
-BaseCaching = __import__('base_caching').BaseCaching
+BaseCaching = __import__("base_caching").BaseCaching
 
 
 class LIFOCache(BaseCaching):
@@ -16,9 +16,11 @@ class LIFOCache(BaseCaching):
         """Assign to the dictionary self.cache_data
         the item value for the key key.
         If key or item is None, this method should not do anything.
-        If the number of items in self.cache_data is higher that BaseCaching.MAX_ITEMS:
+        If the number of items in self.cache_data
+        is higher that BaseCaching.MAX_ITEMS:
         you must discard the last item put in cache (LIFO algorithm)
-        you must print DISCARD: with the key discarded and following by a new line
+        you must print DISCARD: with the key discarded
+        and following by a new line
         """
         last_inserted = None
         if key is not None and item is not None:
@@ -33,6 +35,7 @@ class LIFOCache(BaseCaching):
 
     def get(self, key):
         """Return the value in self.cache_data linked to key.
-        If key is None or if the key doesn’t exist in self.cache_data, return None.
+        If key is None or if the key doesn’t exist in self.cache_data,
+        return None.
         """
-        return self.cache_data.get(key) if key != None else None
+        return self.cache_data.get(key) if key is not None else None

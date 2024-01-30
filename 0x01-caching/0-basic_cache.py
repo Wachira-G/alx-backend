@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """Module for class BasicCache inheriting from BaseCaching."""
-BaseCaching = __import__('base_caching').BaseCaching
+BaseCaching = __import__("base_caching").BaseCaching
 
 
 class BasicCache(BaseCaching):
@@ -18,4 +18,4 @@ class BasicCache(BaseCaching):
         """Return the value in self.cache_data linked to key.
         If key is None or if the key doesn’t exist in self.cache_data,
         return None."""
-        return self.cache_data.get(key) if key != None else None
+        return self.cache_data.get(key) if key is not None else None
