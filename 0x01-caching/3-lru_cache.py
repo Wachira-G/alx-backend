@@ -13,7 +13,6 @@ class LRUCache(BaseCaching):
         """Initialize by overloading parent's initialization."""
         self.ordered_dict = OrderedDict()
         super().__init__()
-        self.ordered_dict.update(self.cache_data)
 
     def put(self, key, item):
         """Assign to the dictionary self.cache_data the item value
@@ -43,4 +42,7 @@ class LRUCache(BaseCaching):
         If key is None or if the key doesn’t exist in self.cache_data,
         return None.
         """
-        return self.cache_data.get(key) if key is not None else None
+        if key in self.cache_data:
+            self.ordered_dict.move_to_end(key)
+            return self.cache_data.get(key)
+        return None
