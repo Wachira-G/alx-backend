@@ -18,7 +18,7 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
+        """Create the Cached dataset.
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
